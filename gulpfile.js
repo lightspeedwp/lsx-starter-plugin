@@ -39,19 +39,8 @@ gulp.task('wordpress-pot', function () {
 			domain: '{plugin-name}',
 			destFile: '{plugin-name}.pot',
 			package: '{plugin-name}',
-			bugReport: 'https://bitbucket.org/feedmycode/lsx-currency/issues',
+			bugReport: '{plugin-url}/issues',
 			team: 'LightSpeed <webmaster@lsdev.biz>'
 		}))
 		.pipe(gulp.dest('languages'));
-});
-
-gulp.task('reload-node-js', function() {
-	gulp.src('node_modules/flag-icon-css/accounting.js').pipe(gulp.dest('assets/js').on('error', function (err) {console.log('Error!', err);}));
-	gulp.src('node_modules/money/money.js').pipe(gulp.dest('assets/js').on('error', function (err) {console.log('Error!', err);}));
-
-	gulp.src('node_modules/js-cookie/src/js.cookie.js')
-		.pipe(rename('cookie.js'))
-		.pipe(gulp.dest('assets/js')
-			.on('error', function (err) {console.log('Error!', err);})
-		);
 });

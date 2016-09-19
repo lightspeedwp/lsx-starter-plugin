@@ -8,4 +8,19 @@ LSX starter plugin for building LSX theme extensions and LSX Tour Operators plug
 
 # Copy and Replace
 
- * {plugin-name}	|	lsx-currency
+## Personal Details
+ * {your-name}			|	John Smith
+ * {your-url}			|	http://example.com
+
+## Labels and urls
+
+ * {plugin-description}	|	An addon for the LSX Tour Operators.
+
+## Method and Class names
+
+ * {plugin-label}		|	LSX Starter Plugin
+ * {plugin-url}			|	https://github.com/lightspeeddevelopment/lsx-starter-plugin
+ * {plugin-name}		|	lsx-starter-plugin
+ * {PREFIX_CAPS}		|	LSX_STARTER_PLUGIN
+ * {prefix_small}		|	lsx_starter_plugin
+ * {class-name}			|	LSX_Starter_Plugin
