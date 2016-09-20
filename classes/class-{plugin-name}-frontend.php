@@ -22,7 +22,7 @@ class {class-name}_Frontend extends {class-name}{
 		}else{
 			$min = '.min';
 		}
-		wp_enqueue_script( '{prefix_small}', LSX_CURRENCY_URL.'/assets/js/{plugin-name}'.$min.'.js', array(
+		wp_enqueue_script( '{prefix_small}', {PREFIX_CAPS}_URL.'/assets/js/{plugin-name}'.$min.'.js', array(
 			'jquery',
 		), '1.0.0', true );
 
