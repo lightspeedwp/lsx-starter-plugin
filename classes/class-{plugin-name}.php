@@ -1,8 +1,21 @@
 <?php
+/**
+ * {class-name}
+ *
+ * @package   {class-name}
+ * @author    {your-name}
+ * @license   GPL-2.0+
+ * @link      
+ * @copyright {year} LightSpeedDevelopment
+ */
 if (!class_exists( '{class-name}' ) ) {
+
 	/**
-	 * {plugin-label} Main Class
-	 */
+	 * Main plugin class.
+	 *
+	 * @package {class-name}
+	 * @author  {your-name}
+	 */	
 	class {class-name} {
 		
 		/** @var string */

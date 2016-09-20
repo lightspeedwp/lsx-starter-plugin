@@ -1,8 +1,20 @@
 <?php
 /**
- * {class-name} Frontend Main Class
+ * {class-name}_Frontend
+ *
+ * @package   {class-name}_Frontend
+ * @author    {your-name}
+ * @license   GPL-2.0+
+ * @link      
+ * @copyright {year} LightSpeedDevelopment
  */
 
+/**
+ * Main plugin class.
+ *
+ * @package {class-name}_Frontend
+ * @author  {your-name}
+ */
 class {class-name}_Frontend extends {class-name}{
 
 	/**

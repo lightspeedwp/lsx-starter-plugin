@@ -1,6 +1,19 @@
 <?php
 /**
- * {plugin-label} Main Class
+ * {class-name}_Admin
+ *
+ * @package   {class-name}_Admin
+ * @author    {your-name}
+ * @license   GPL-2.0+
+ * @link      
+ * @copyright {year} LightSpeedDevelopment
+ */
+
+/**
+ * Main plugin class.
+ *
+ * @package {class-name}_Admin
+ * @author  {your-name}
  */
 
 class {class-name}_Admin extends {class-name}{	
