@@ -11,6 +11,7 @@ LSX starter plugin for building LSX theme extensions and LSX Tour Operators plug
 ## Personal Details
  * {your-name}			|	John Smith
  * {your-url}			|	http://example.com
+ * {your-email}			|	webmaster@lsdev.biz
 
 ## Labels and urls
 

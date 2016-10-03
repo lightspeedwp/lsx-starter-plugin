@@ -1,0 +1,3 @@
+/*
+ * {plugin-label}-admin.js
+ */

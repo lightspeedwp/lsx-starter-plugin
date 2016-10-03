@@ -1,0 +1,2 @@
+# Copyright (C) {year} {plugin-name}
+# This file is distributed under the same license as the {plugin-name} package.
