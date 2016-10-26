@@ -24,7 +24,7 @@ if ( ! class_exists( '{class-name}_Admin' ) ) {
 		 */
 		public function __construct() {
 			add_action( 'admin_enqueue_scripts',               array( $this, 'assets' ) );
-			add_action( 'lsx_framework_dashboard_tab_content', array( $this, 'settings' ), 11 );
+			add_action( 'to_framework_dashboard_tab_content', array( $this, 'settings' ), 11 );
 		}
 
 		/**
