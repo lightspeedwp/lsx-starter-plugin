@@ -18,8 +18,8 @@ if ( ! defined( 'WPINC' ) ) {
 
 define( '{PREFIX_CAPS}_PATH', plugin_dir_path( __FILE__ ) );
 define( '{PREFIX_CAPS}_CORE', __FILE__ );
-define( '{PREFIX_CAPS}_URL', plugin_dir_url( __FILE__ ) );
-define( '{PREFIX_CAPS}_VER', '1.0.0' );
+define( '{PREFIX_CAPS}_URL',  plugin_dir_url( __FILE__ ) );
+define( '{PREFIX_CAPS}_VER',  '1.0.0' );
 
 /**
  * Runs once when the plugin is activated.

@@ -5,7 +5,6 @@ LSX starter plugin for building LSX theme extensions and LSX Tour Operators plug
 
  * Download or export this repo.
 
-
 # Copy and Replace
 
 ## Personal Details
@@ -26,7 +25,7 @@ LSX starter plugin for building LSX theme extensions and LSX Tour Operators plug
  * {prefix_small}		|	lsx_starter_plugin
  * {class-name}			|	LSX_Starter_Plugin
 
-
 ## Post Type
  * {post-type}			|	book
  * {post-type-plural}	|	books
+ 
