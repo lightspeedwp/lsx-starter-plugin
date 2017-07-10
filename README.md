@@ -24,6 +24,7 @@ LSX starter plugin for building LSX theme extensions and LSX Tour Operators plug
  * {PREFIX_CAPS}		|	LSX_STARTER_PLUGIN
  * {prefix_small}		|	lsx_starter_plugin
  * {class-name}			|	LSX_Starter_Plugin
+ * {namespace}          |   lsx
 
 ## Post Type
  * {post-type}			|	book

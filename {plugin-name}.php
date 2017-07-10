@@ -31,4 +31,4 @@ register_activation_hook( __FILE__, '{prefix_small}_activate_plugin' );
 
 /* ======================= Below is the Plugin Class init ========================= */
 
-require_once( {PREFIX_CAPS}_PATH . '/classes/class-{plugin-name}.php' );
+require_once( {PREFIX_CAPS}_PATH . 'includes/{plugin-name}.php' );
