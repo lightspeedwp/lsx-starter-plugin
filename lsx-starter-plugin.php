@@ -31,6 +31,6 @@ require_once( LSX_STARTER_PLUGIN_PATH . '/classes/class-core.php' );
  * @return void
  */
 function lsx_starter_plugin() {
-	return LSX_Starter_Plugin::get_instance();
+	return \lsx_starter_plugin\classes\Core::get_instance();
 }
 lsx_starter_plugin();

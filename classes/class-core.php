@@ -1,5 +1,5 @@
 <?php
-namespace \lsx_starter_plugin\classes;
+namespace lsx_starter_plugin\classes;
 
 /**
  * LSX Starter Plugin Main Class.
@@ -18,9 +18,14 @@ class Core {
 	protected static $instance = null;	
 
 	/**
-	 * @var object \lsx_starter_plugin\classes\Setup();
+	 * @var object \lsx_starter_plugin\classes\Admin();
 	 */
 	public $admin;
+
+	/**
+	 * @var object \lsx_starter_plugin\classes\Frontend();
+	 */
+	public $frontend;	
 
 	/**
 	 * Contructor
@@ -55,8 +60,8 @@ class Core {
 		require_once( LSX_STARTER_PLUGIN_PATH . 'classes/class-admin.php' );
 		$this->admin = Admin::get_instance();
 
-		require_once( LSX_STARTER_PLUGIN_PATH . '/classes/class-lsx-starter-plugin-frontend.php' );
-		require_once( LSX_STARTER_PLUGIN_PATH . '/includes/functions.php' );		
+		require_once( LSX_STARTER_PLUGIN_PATH . '/classes/class-frontend.php' );	
+		$this->frontend = Frontend::get_instance();	
 	}	
 
 	/**

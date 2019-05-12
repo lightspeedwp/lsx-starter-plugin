@@ -1,5 +1,5 @@
 <?php
-namespace \lsx_starter_plugin\classes;
+namespace lsx_starter_plugin\classes;
 
 /**
  * LSX Starter Plugin Frontend Class.
