@@ -15,11 +15,11 @@ class Frontend {
 	 *
 	 * @var      object \lsx_starter_plugin\classes\Frontend()
 	 */
-	protected static $instance = null;		
+	protected static $instance = null;	
 
 	/**
 	 * Contructor
-	 */		
+	 */
 	public function __construct() {
 		add_action( 'wp_enqueue_scripts', array( $this, 'assets' ), 999 );
 	}
@@ -32,15 +32,12 @@ class Frontend {
 	 * @return    object \lsx_starter_plugin\classes\Frontend()    A single instance of this class.
 	 */
 	public static function get_instance() {
-
 		// If the single instance hasn't been set, set it now.
 		if ( null == self::$instance ) {
 			self::$instance = new self;
 		}
-
 		return self::$instance;
-
-	}	
+	}
 
 	/**
 	 * Registers the plugin frontend assets
@@ -59,5 +56,4 @@ class Frontend {
 		wp_enqueue_style( 'lsx-starter-plugin', LSX_STARTER_PLUGIN_URL . 'assets/css/lsx-starter-plugin.css', array(), LSX_STARTER_PLUGIN_VER );
 		wp_style_add_data( 'lsx-starter-plugin', 'rtl', 'replace' );
 	}
-
 }

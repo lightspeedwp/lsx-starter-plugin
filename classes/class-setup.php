@@ -14,11 +14,11 @@ class Setup {
 	 *
 	 * @var      object \lsx_starter_plugin\classes\Setup()
 	 */
-	protected static $instance = null;		
+	protected static $instance = null;
 
 	/**
 	 * Contructor
-	 */		
+	 */
 	public function __construct() {
 	}
 

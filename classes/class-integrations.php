@@ -14,11 +14,11 @@ class Integrations {
 	 *
 	 * @var      object \lsx_starter_plugin\classes\Integrations()
 	 */
-	protected static $instance = null;		
+	protected static $instance = null;
 
 	/**
 	 * Contructor
-	 */		
+	 */
 	public function __construct() {
 	}
 

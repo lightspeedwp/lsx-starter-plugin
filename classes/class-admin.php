@@ -14,11 +14,11 @@ class Admin {
 	 *
 	 * @var      object \lsx_starter_plugin\classes\Admin()
 	 */
-	protected static $instance = null;		
+	protected static $instance = null;
 
 	/**
 	 * Contructor
-	 */		
+	 */
 	public function __construct() {
 		add_action( 'admin_enqueue_scripts', array( $this, 'assets' ) );
 	}

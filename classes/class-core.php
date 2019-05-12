@@ -15,7 +15,7 @@ class Core {
 	 *
 	 * @var      object \lsx_starter_plugin\classes\Core()
 	 */
-	protected static $instance = null;	
+	protected static $instance = null;
 
 	/**
 	 * @var object \lsx_starter_plugin\classes\Setup();
@@ -25,7 +25,7 @@ class Core {
 	/**
 	 * @var object \lsx_starter_plugin\classes\Admin();
 	 */
-	public $admin;	
+	public $admin;
 
 	/**
 	 * @var object \lsx_starter_plugin\classes\Frontend();
@@ -39,7 +39,7 @@ class Core {
 
 	/**
 	 * Contructor
-	 */	
+	 */
 	public function __construct() {
 		$this->load_classes();
 		$this->load_includes();
@@ -61,30 +61,30 @@ class Core {
 
 		return self::$instance;
 
-	}	
+	}
 
 	/**
 	 * Loads the variable classes and the static classes.
 	 */
 	private function load_classes() {
 
-		require_once( LSX_STARTER_PLUGIN_PATH . '/classes/class-setup.php' );	
-		$this->setup = Setup::get_instance();			
+		require_once( LSX_STARTER_PLUGIN_PATH . '/classes/class-setup.php' );
+		$this->setup = Setup::get_instance();		
 
 		require_once( LSX_STARTER_PLUGIN_PATH . 'classes/class-admin.php' );
 		$this->admin = Admin::get_instance();
 
-		require_once( LSX_STARTER_PLUGIN_PATH . '/classes/class-frontend.php' );	
-		$this->frontend = Frontend::get_instance();	
+		require_once( LSX_STARTER_PLUGIN_PATH . '/classes/class-frontend.php' );
+		$this->frontend = Frontend::get_instance();
 
-		require_once( LSX_STARTER_PLUGIN_PATH . '/classes/class-integrations.php' );	
-		$this->integrations = Integrations::get_instance();			
-	}	
+		require_once( LSX_STARTER_PLUGIN_PATH . '/classes/class-integrations.php' );
+		$this->integrations = Integrations::get_instance();
+	}
 
 	/**
 	 * Loads the plugin functions.
 	 */
 	private function load_includes() {
-		require_once( LSX_STARTER_PLUGIN_PATH . '/includes/functions.php' );		
-	}	
+		require_once( LSX_STARTER_PLUGIN_PATH . '/includes/functions.php' );
+	}
 }
