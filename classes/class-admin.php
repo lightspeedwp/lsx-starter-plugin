@@ -1,13 +1,44 @@
 <?php
+namespace \lsx_starter_plugin\classes;
 /**
  * LSX Starter Plugin Admin Class.
  *
  * @package lsx-starter-plugin
  */
-class LSX_Starter_Plugin_Admin {
+class Admin {
 
+	/**
+	 * Holds class instance
+	 *
+	 * @since 1.0.0
+	 *
+	 * @var      object \lsx_starter_plugin\classes\Admin()
+	 */
+	protected static $instance = null;		
+
+	/**
+	 * Contructor
+	 */		
 	public function __construct() {
 		add_action( 'admin_enqueue_scripts', array( $this, 'assets' ) );
+	}
+
+	/**
+	 * Return an instance of this class.
+	 *
+	 * @since 1.0.0
+	 *
+	 * @return    object \lsx\member_directory\classes\Core()    A single instance of this class.
+	 */
+	public static function get_instance() {
+
+		// If the single instance hasn't been set, set it now.
+		if ( null == self::$instance ) {
+			self::$instance = new self;
+		}
+
+		return self::$instance;
+
 	}
 
 	public function assets() {
@@ -21,6 +52,3 @@ class LSX_Starter_Plugin_Admin {
 	}
 
 }
-
-global $lsx_starter_plugin_admin;
-$lsx_starter_plugin_admin = new LSX_Starter_Plugin_Admin();

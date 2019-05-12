@@ -7,3 +7,9 @@ Tested up to: 4.8
 Requires PHP: 7.0
 Stable tag: 1.0.8
 License: GPLv3
+
+
+== Variables for replacements ==
+
+ * lsx_starter_plugin
+ * lsx-starter-plugin
