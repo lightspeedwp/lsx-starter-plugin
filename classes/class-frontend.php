@@ -29,7 +29,7 @@ class Frontend {
 	 *
 	 * @since 1.0.0
 	 *
-	 * @return    object \lsx\member_directory\classes\Core()    A single instance of this class.
+	 * @return    object \lsx_starter_plugin\classes\Frontend()    A single instance of this class.
 	 */
 	public static function get_instance() {
 
@@ -42,6 +42,11 @@ class Frontend {
 
 	}	
 
+	/**
+	 * Registers the plugin frontend assets
+	 *
+	 * @return void
+	 */
 	public function assets() {
 		wp_enqueue_script( 'lsx-starter-plugin', LSX_STARTER_PLUGIN_URL . 'assets/js/lsx-starter-plugin.min.js', array( 'jquery' ), LSX_STARTER_PLUGIN_VER, true );
 

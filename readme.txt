@@ -13,3 +13,4 @@ License: GPLv3
 
  * lsx_starter_plugin
  * lsx-starter-plugin
+ * LSX_STARTER_PLUGIN

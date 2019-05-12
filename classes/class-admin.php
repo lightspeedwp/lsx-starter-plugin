@@ -28,7 +28,7 @@ class Admin {
 	 *
 	 * @since 1.0.0
 	 *
-	 * @return    object \lsx\member_directory\classes\Core()    A single instance of this class.
+	 * @return    object \lsx\member_directory\classes\Admin()    A single instance of this class.
 	 */
 	public static function get_instance() {
 
@@ -41,6 +41,11 @@ class Admin {
 
 	}
 
+	/**
+	 * Undocumented function
+	 *
+	 * @return void
+	 */
 	public function assets() {
 		//wp_enqueue_media();
 		wp_enqueue_script( 'media-upload' );
