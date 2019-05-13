@@ -17,6 +17,15 @@ class Custom_Post_Type {
 	protected static $instance = null;
 
 	/**
+	 * Holds post_type slug used as an index
+	 *
+	 * @since 1.0.0
+	 *
+	 * @var      string
+	 */
+	public $slug = 'custom_post_type';		
+
+	/**
 	 * Contructor
 	 */
 	public function __construct() {
@@ -83,7 +92,7 @@ class Custom_Post_Type {
 				'excerpt',
 			),
 		);
-		register_post_type( 'custom_post_type', $args );
+		register_post_type( $this->slug, $args );
 	}	
 	
 	/**
@@ -116,5 +125,15 @@ class Custom_Post_Type {
 		);
 
 		register_taxonomy( 'term', array( 'custom_post_type' ), $args );
-	}	
+	}
+	/**
+	 * Adds the post type to the different arrays.
+	 *
+	 * @param array $post_types
+	 * @return array
+	 */
+	public function enable_post_type( $post_types = array() ) {
+		$post_types[] = $this->slug;
+		return $post_types;
+	}		
 }
