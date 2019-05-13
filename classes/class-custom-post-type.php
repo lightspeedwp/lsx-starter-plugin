@@ -1,32 +1,26 @@
 <?php
 namespace lsx_starter_plugin\classes;
 /**
- * LSX Starter Plugin Admin Class.
+ * Contains the recipe post type
  *
  * @package lsx-starter-plugin
  */
-class Setup {
+class Custom_Post_Type {
 
 	/**
 	 * Holds class instance
 	 *
 	 * @since 1.0.0
 	 *
-	 * @var      object \lsx_starter_plugin\classes\Setup()
+	 * @var      object \lsx_starter_plugin\classes\Custom_Post_Type()
 	 */
 	protected static $instance = null;
-
-	/**
-	 * @var object \lsx_health_plan\classes\Post_Type();
-	 */
-	public $post_types;		
 
 	/**
 	 * Contructor
 	 */
 	public function __construct() {
-		require_once( LSX_STARTER_PLUGIN_PATH . 'classes/class-post-type.php' );
-		$this->post_types = Post_Type::get_instance();
+
 	}
 
 	/**
@@ -34,7 +28,7 @@ class Setup {
 	 *
 	 * @since 1.0.0
 	 *
-	 * @return    object \lsx_starter_plugin\classes\Setup()    A single instance of this class.
+	 * @return    object \lsx_starter_plugin\classes\Custom_Post_Type()    A single instance of this class.
 	 */
 	public static function get_instance() {
 

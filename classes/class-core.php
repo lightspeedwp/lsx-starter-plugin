@@ -38,6 +38,13 @@ class Core {
 	public $integrations;
 
 	/**
+	 * The post types available
+	 *
+	 * @var array
+	 */
+	public $post_types = array();	
+
+	/**
 	 * Contructor
 	 */
 	public function __construct() {
@@ -87,4 +94,13 @@ class Core {
 	private function load_includes() {
 		require_once( LSX_STARTER_PLUGIN_PATH . '/includes/functions.php' );
 	}
+
+	/**
+	 * Returns the post types currently active
+	 *
+	 * @return void
+	 */
+	public function get_post_types() {
+		return apply_filters( 'lsx_starter_plugin_post_types', $this->post_types );
+	}	
 }
