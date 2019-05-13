@@ -1,6 +1,6 @@
 <?php
 /**
- * The Template for displaying all single posts.
+ * The template for displaying Taxonomy archives
  *
  * @package lsx-starter-plugin
  */
@@ -19,11 +19,21 @@ get_header(); ?>
 
 		<?php if ( have_posts() ) : ?>
 
-			<?php while ( have_posts() ) : the_post(); ?>
+			<div class="post-wrapper">
 
-				<?php include( LSX_STARTER_PLUGIN_PATH . '/templates/content-custom-post-type.php' ); ?>
+				<?php while ( have_posts() ) : the_post(); ?>
 
-			<?php endwhile; ?>
+					<?php include( LSX_STARTER_PLUGIN_PATH . '/templates/content-custom-post-type.php' ); ?>
+
+				<?php endwhile; ?>
+
+			</div>
+
+			<?php lsx_paging_nav(); ?>
+
+		<?php else : ?>
+
+			<?php get_template_part( 'partials/content', 'none' ); ?>
 
 		<?php endif; ?>
 
@@ -33,22 +43,11 @@ get_header(); ?>
 
 	<?php lsx_content_after(); ?>
 
-	<?php
-		if ( is_singular( 'post' ) ) {
-			lsx_post_nav();
-		}
-	?>
-
-	<?php
-		if ( comments_open() ) {
-			comments_template();
-		}
-	?>
-
 </div><!-- #primary -->
 
 <?php lsx_content_wrap_after(); ?>
 
 <?php get_sidebar(); ?>
 
-<?php get_footer();
+<?php
+get_footer();
