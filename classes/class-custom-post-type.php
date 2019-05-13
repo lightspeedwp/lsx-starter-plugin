@@ -23,7 +23,7 @@ class Custom_Post_Type {
 	 *
 	 * @var      string
 	 */
-	public $slug = 'custom_post_type';		
+	public $slug = 'custom_post_type';
 
 	/**
 	 * Contructor
@@ -93,8 +93,7 @@ class Custom_Post_Type {
 			),
 		);
 		register_post_type( $this->slug, $args );
-	}	
-	
+	}
 	/**
 	 * Register the Week taxonomy.
 	 */
@@ -135,5 +134,5 @@ class Custom_Post_Type {
 	public function enable_post_type( $post_types = array() ) {
 		$post_types[] = $this->slug;
 		return $post_types;
-	}		
+	}
 }

@@ -19,7 +19,7 @@ class Setup {
 	/**
 	 * @var object \lsx_health_plan\classes\Post_Type();
 	 */
-	public $post_types;		
+	public $post_types;
 
 	/**
 	 * Contructor

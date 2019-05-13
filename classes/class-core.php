@@ -42,7 +42,7 @@ class Core {
 	 *
 	 * @var array
 	 */
-	public $post_types = array();	
+	public $post_types = array();
 
 	/**
 	 * Contructor
@@ -60,14 +60,11 @@ class Core {
 	 * @return    object \lsx_starter_plugin\classes\Core()    A single instance of this class.
 	 */
 	public static function get_instance() {
-
 		// If the single instance hasn't been set, set it now.
 		if ( null == self::$instance ) {
 			self::$instance = new self;
 		}
-
 		return self::$instance;
-
 	}
 
 	/**
@@ -76,7 +73,7 @@ class Core {
 	private function load_classes() {
 
 		require_once( LSX_STARTER_PLUGIN_PATH . '/classes/class-setup.php' );
-		$this->setup = Setup::get_instance();		
+		$this->setup = Setup::get_instance();	
 
 		require_once( LSX_STARTER_PLUGIN_PATH . 'classes/class-admin.php' );
 		$this->admin = Admin::get_instance();
@@ -102,5 +99,5 @@ class Core {
 	 */
 	public function get_post_types() {
 		return apply_filters( 'lsx_starter_plugin_post_types', $this->post_types );
-	}	
+	}
 }

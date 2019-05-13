@@ -21,7 +21,7 @@ class Post_Type {
 	 *
 	 * @var array
 	 */
-	public $post_types = array();		
+	public $post_types = array();
 
 	/**
 	 * Contructor
@@ -33,7 +33,7 @@ class Post_Type {
 			require_once( LSX_STARTER_PLUGIN_PATH . 'classes/class-' . $post_type . '.php' );
 			$classname = ucwords( $post_type );
 			$this->$post_type = call_user_func_array( '\\lsx_starter_plugin\classes\\' . $classname . '::get_instance', array() );
-		}		
+		}
 	}
 
 	/**
@@ -61,5 +61,5 @@ class Post_Type {
 			'custom_post_type',
 		);
 		return $post_types;
-	}	
+	}
 }

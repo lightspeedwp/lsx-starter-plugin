@@ -15,7 +15,7 @@ class Frontend {
 	 *
 	 * @var      object \lsx_starter_plugin\classes\Frontend()
 	 */
-	protected static $instance = null;	
+	protected static $instance = null;
 
 	/**
 	 * Contructor
@@ -25,8 +25,8 @@ class Frontend {
 
 		//Handle the template redirects.
 		add_filter( 'template_include', array( $this, 'archive_template_include' ), 99 );
-		add_filter( 'template_include', array( $this, 'single_template_include' ), 99 );		
-		add_filter( 'template_include', array( $this, 'taxonomy_template_include' ), 99 );		
+		add_filter( 'template_include', array( $this, 'single_template_include' ), 99 );
+		add_filter( 'template_include', array( $this, 'taxonomy_template_include' ), 99 );
 	}
 
 	/**
@@ -88,7 +88,7 @@ class Frontend {
 			}
 		}
 		return $template;
-	}	
+	}
 
 	/**
 	 * Redirect wordpress to the taxonomy located in the plugin
@@ -105,5 +105,5 @@ class Frontend {
 			}
 		}
 		return $template;
-	}	
+	}
 }
