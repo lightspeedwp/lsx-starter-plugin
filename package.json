@@ -36,5 +36,13 @@
     "gulp-util": "^3.0.8",
     "gulp-wp-pot": "^2.0.4",
     "jshint": "^2.10.2"
+  },
+  "dependencies": {
+    "clean-css": "^4.1.11",
+    "extend": "^3.0.2",
+    "fstream": "^1.0.12",
+    "lodash": "^4.17.11",
+    "minimatch": "^3.0.2",
+    "tar": "^2.2.2"
   }
 }
