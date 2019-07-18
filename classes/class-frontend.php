@@ -21,7 +21,7 @@ class Frontend {
 	 * Contructor
 	 */
 	public function __construct() {
-		add_action( 'wp_enqueue_scripts', array( $this, 'assets' ), 999 );
+		add_action( 'wp_enqueue_scripts', array( $this, 'assets' ), 5 );
 
 		//Handle the template redirects.
 		add_filter( 'template_include', array( $this, 'archive_template_include' ), 99 );
