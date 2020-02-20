@@ -18,15 +18,15 @@ if ( ! defined( 'WPINC' ) ) {
 
 define( 'LSX_STARTER_PLUGIN_PATH', plugin_dir_path( __FILE__ ) );
 define( 'LSX_STARTER_PLUGIN_CORE', __FILE__ );
-define( 'LSX_STARTER_PLUGIN_URL',  plugin_dir_url( __FILE__ ) );
-define( 'LSX_STARTER_PLUGIN_VER',  '1.1.0' );
+define( 'LSX_STARTER_PLUGIN_URL', plugin_dir_url( __FILE__ ) );
+define( 'LSX_STARTER_PLUGIN_VER', '1.1.0' );
 
 /* ======================= Below is the Plugin Class init ========================= */
 
-require_once( LSX_STARTER_PLUGIN_PATH . '/classes/class-core.php' );
+require_once LSX_STARTER_PLUGIN_PATH . '/classes/class-core.php';
 
 /**
- * Undocumented function
+ * Plugin kicks off with this function.
  *
  * @return void
  */

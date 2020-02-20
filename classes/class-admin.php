@@ -1,5 +1,6 @@
 <?php
 namespace lsx_starter_plugin\classes;
+
 /**
  * LSX Starter Plugin Admin Class.
  *
@@ -20,6 +21,7 @@ class Admin {
 	 * Contructor
 	 */
 	public function __construct() {
+		// Enqueue scripts for all admin pages.
 		add_action( 'admin_enqueue_scripts', array( $this, 'assets' ) );
 	}
 
@@ -34,7 +36,7 @@ class Admin {
 
 		// If the single instance hasn't been set, set it now.
 		if ( null == self::$instance ) {
-			self::$instance = new self;
+			self::$instance = new self();
 		}
 
 		return self::$instance;
@@ -42,12 +44,12 @@ class Admin {
 	}
 
 	/**
-	 * Undocumented function
+	 * Various assest we want loaded for admin pages.
 	 *
 	 * @return void
 	 */
 	public function assets() {
-		//wp_enqueue_media();
+		// wp_enqueue_media();
 		wp_enqueue_script( 'media-upload' );
 		wp_enqueue_script( 'thickbox' );
 		wp_enqueue_style( 'thickbox' );
