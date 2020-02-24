@@ -1,5 +1,6 @@
 <?php
 namespace lsx_starter_plugin\classes;
+
 /**
  * Contains all the classes for 3rd party Integrations
  *
@@ -20,6 +21,8 @@ class Integrations {
 	 * Contructor
 	 */
 	public function __construct() {
+		// Initialize CMB2 framework.
+		require_once LSX_STARTER_PLUGIN_PATH . 'vendor/cmb2/init.php';
 	}
 
 	/**
@@ -33,7 +36,7 @@ class Integrations {
 
 		// If the single instance hasn't been set, set it now.
 		if ( null == self::$instance ) {
-			self::$instance = new self;
+			self::$instance = new self();
 		}
 
 		return self::$instance;

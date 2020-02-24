@@ -62,7 +62,7 @@ class Core {
 	public static function get_instance() {
 		// If the single instance hasn't been set, set it now.
 		if ( null == self::$instance ) {
-			self::$instance = new self;
+			self::$instance = new self();
 		}
 		return self::$instance;
 	}
@@ -71,17 +71,20 @@ class Core {
 	 * Loads the variable classes and the static classes.
 	 */
 	private function load_classes() {
-
-		require_once( LSX_STARTER_PLUGIN_PATH . '/classes/class-setup.php' );
+		// Load plugin settings related functionality.
+		require_once LSX_STARTER_PLUGIN_PATH . '/classes/class-setup.php';
 		$this->setup = Setup::get_instance();
 
-		require_once( LSX_STARTER_PLUGIN_PATH . 'classes/class-admin.php' );
+		// Load plugin admin related functionality.
+		require_once LSX_STARTER_PLUGIN_PATH . 'classes/class-admin.php';
 		$this->admin = Admin::get_instance();
 
-		require_once( LSX_STARTER_PLUGIN_PATH . '/classes/class-frontend.php' );
+		// Load front-end related functionality.
+		require_once LSX_STARTER_PLUGIN_PATH . '/classes/class-frontend.php';
 		$this->frontend = Frontend::get_instance();
 
-		require_once( LSX_STARTER_PLUGIN_PATH . '/classes/class-integrations.php' );
+		// Load 3rd party integrations here.
+		require_once LSX_STARTER_PLUGIN_PATH . '/classes/class-integrations.php';
 		$this->integrations = Integrations::get_instance();
 	}
 
@@ -89,7 +92,7 @@ class Core {
 	 * Loads the plugin functions.
 	 */
 	private function load_includes() {
-		require_once( LSX_STARTER_PLUGIN_PATH . '/includes/functions.php' );
+		require_once LSX_STARTER_PLUGIN_PATH . '/includes/functions.php';
 	}
 
 	/**

@@ -1,5 +1,6 @@
 <?php
 namespace lsx_starter_plugin\classes;
+
 /**
  * Contains the recipe post type
  *
@@ -44,7 +45,7 @@ class Custom_Post_Type {
 
 		// If the single instance hasn't been set, set it now.
 		if ( null == self::$instance ) {
-			self::$instance = new self;
+			self::$instance = new self();
 		}
 
 		return self::$instance;
@@ -70,7 +71,7 @@ class Custom_Post_Type {
 			'parent_item_colon'  => '',
 			'menu_name'          => esc_html__( 'Customs', 'lsx-starter-plugin' ),
 		);
-		$args = array(
+		$args   = array(
 			'labels'             => $labels,
 			'public'             => true,
 			'publicly_queryable' => true,
@@ -94,6 +95,7 @@ class Custom_Post_Type {
 		);
 		register_post_type( $this->slug, $args );
 	}
+
 	/**
 	 * Register the Week taxonomy.
 	 */

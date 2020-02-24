@@ -1,5 +1,6 @@
 <?php
 namespace lsx_starter_plugin\classes;
+
 /**
  * LSX Starter Plugin Post Class.
  *
@@ -27,11 +28,12 @@ class Post_Type {
 	 * Contructor
 	 */
 	public function __construct() {
+		// configure our custom post types in here
 		$this->enable_post_types();
 		add_filter( 'lsx_starter_plugin_post_types', array( $this, 'enable_post_types' ) );
 		foreach ( $this->post_types as $post_type ) {
-			require_once( LSX_STARTER_PLUGIN_PATH . 'classes/class-' . $post_type . '.php' );
-			$classname = ucwords( $post_type );
+			require_once LSX_STARTER_PLUGIN_PATH . 'classes/class-' . $post_type . '.php';
+			$classname        = ucwords( $post_type );
 			$this->$post_type = call_user_func_array( '\\lsx_starter_plugin\classes\\' . $classname . '::get_instance', array() );
 		}
 	}
@@ -46,7 +48,7 @@ class Post_Type {
 	public static function get_instance() {
 		// If the single instance hasn't been set, set it now.
 		if ( null == self::$instance ) {
-			self::$instance = new self;
+			self::$instance = new self();
 		}
 		return self::$instance;
 	}
@@ -58,7 +60,7 @@ class Post_Type {
 	 */
 	public function enable_post_types() {
 		$this->post_types = array(
-			'custom_post_type',
+			'custom-post-type',
 		);
 		return $post_types;
 	}
