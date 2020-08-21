@@ -1,6 +1,5 @@
 node_modules
-vendor
 .sass-cache
 .idea
 *.sublime-workspace
-*.code-workspace
+package-lock.json
