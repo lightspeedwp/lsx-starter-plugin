@@ -69,7 +69,6 @@ class Core {
 	 * @return void
 	 */
 	public function load_vendor() {
-		global $CONTENT_MODEL_JSON_PATH;
 		require_once LSX_STARTER_PLUGIN_PATH . 'vendors/create-content-model/create-content-model.php';
 	}
 }

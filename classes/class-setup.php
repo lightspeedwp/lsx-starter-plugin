@@ -8,15 +8,6 @@ namespace lsx_starter_plugin\classes;
 class Setup {
 
 	/**
-	 * Holds class instance
-	 *
-	 * @since 1.0.0
-	 *
-	 * @var      object \lsx_starter_plugin\classes\Setup()
-	 */
-	protected static $instance = null;
-
-	/**
 	 * Contructor
 	 */
 	public function __construct() {
