@@ -1,8 +1,6 @@
 <?php
 namespace lsx_starter_plugin\classes;
 
-use lsx_starter_plugin\classes;
-
 /**
  * This class loads the other classes and function files
  *
