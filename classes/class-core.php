@@ -1,6 +1,8 @@
 <?php
 namespace lsx_starter_plugin\classes;
 
+use lsx_starter_plugin\classes;
+
 /**
  * This class loads the other classes and function files
  *
@@ -18,20 +20,15 @@ class Core {
 	protected static $instance = null;
 
 	/**
-	 * @var object \lsx_starter_plugin\classes\Setup();
+	 * An array of the classes initiated, the filename is the index.
+	 *
+	 * $classes['setup']     = \lsx_starter_plugin\classes\Setup();
+	 * $classes['admin']     = \lsx_starter_plugin\classes\Admin();
+	 * $classes['templates'] = \lsx_starter_plugin\classes\Templates();
+	 * 
+	 * @var array
 	 */
-	public $setup;
-
-	/**
-	 * @var object \lsx_starter_plugin\classes\Admin();
-	 */
-	public $admin;
-
-	/**
-	 * Holds the template redirect functions
-	 * @var object \lsx_starter_plugin\classes\Templates();
-	 */
-	public $templates;
+	public $classes = [];
 
 	/**
 	 * Contructor
@@ -57,20 +54,28 @@ class Core {
 	}
 
 	/**
-	 * Loads the variable classes and the static classes.
+	 * Registers our block patterns with the 
+	 *
+	 * @return void
 	 */
-	private function load_classes() {
-		// Load plugin settings related functionality.
-		require_once LSX_STARTER_PLUGIN_PATH . 'classes/class-setup.php';
-		$this->setup = new Setup();
+	public function load_classes() {
+		$directory = LSX_STARTER_PLUGIN_PATH . 'classes/';
+		
+		foreach ( glob( $directory . '*.php') as $file ) {
+			if ( 'class-core.php' === $file ) {
+				continue;
+			}
 
-		// Load plugin settings related functionality.
-		require_once LSX_STARTER_PLUGIN_PATH . 'classes/class-templates.php';
-		$this->templates = new Templates( LSX_STARTER_PLUGIN_PATH );
+			// Extract the filename and classname without the directory path and extension
+			$filename  = basename( $file, '.php' );
+			$filename  = str_replace( 'class-', '', $filename );
 
-		// Load plugin admin related functionality.
-		/*require_once LSX_STARTER_PLUGIN_PATH . 'classes/class-admin.php';
-		$this->admin = new Admin();*/
+			// Initiate the class.
+			$this->classes[ $filename ] = require_once $file;
+			if ( 'templates' === $filename ) {
+				$this->classes['templates']->set_path( LSX_STARTER_PLUGIN_PATH );
+			}
+		}
 	}
 
 	/**

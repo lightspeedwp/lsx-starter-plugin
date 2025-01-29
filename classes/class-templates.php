@@ -31,9 +31,18 @@ class Templates {
 	 *
 	 * @access private
 	 */
-	public function __construct( $path ) {
-		$this->path = $path;
+	public function __construct() {
 		add_action( 'init', [ $this, 'register_post_type_templates' ] );
+	}
+
+	/**
+	 * Sets the path the templates should use.
+	 *
+	 * @param [type] $path
+	 * @return void
+	 */
+	public function set_path( $path ) {
+		$this->path = $path;
 	}
 
 	/**
@@ -83,7 +92,9 @@ class Templates {
 	 */
 	protected function get_template_content( $template ) {
 		ob_start();
-		include LSX_STARTER_PLUGIN_PATH . "/templates/{$template}";
+		include $this->path . "/templates/{$template}";
 		return ob_get_clean();
 	}
 }
+
+return new Templates();

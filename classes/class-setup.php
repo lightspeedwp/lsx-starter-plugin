@@ -34,3 +34,5 @@ class Setup {
 		wp_enqueue_style( 'lsx-starter-plugin-admin', LSX_STARTER_PLUGIN_URL . 'assets/css/lsx-starter-plugin-admin.css', array(), LSX_STARTER_PLUGIN_VER );
 	}
 }
+
+return new Setup();
