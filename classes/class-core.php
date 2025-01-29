@@ -28,28 +28,10 @@ class Core {
 	public $admin;
 
 	/**
-	 * @var object \lsx_starter_plugin\classes\Frontend();
-	 */
-	public $frontend;
-
-	/**
-	 * @var object \lsx_starter_plugin\classes\Integrations();
-	 */
-	public $integrations;
-
-	/**
-	 * The post types available
-	 *
-	 * @var array
-	 */
-	public $post_types = array();
-
-	/**
 	 * Contructor
 	 */
 	public function __construct() {
 		$this->load_classes();
-		$this->load_includes();
 	}
 
 	/**
@@ -76,16 +58,7 @@ class Core {
 		$this->setup = new Setup();
 
 		// Load plugin admin related functionality.
-		require_once LSX_STARTER_PLUGIN_PATH . 'classes/class-admin.php';
-		$this->admin = new Admin();
-	}
-
-	/**
-	 * Returns the post types currently active
-	 *
-	 * @return void
-	 */
-	public function get_post_types() {
-		return apply_filters( 'lsx_starter_plugin_post_types', $this->post_types );
+		/*require_once LSX_STARTER_PLUGIN_PATH . 'classes/class-admin.php';
+		$this->admin = new Admin();*/
 	}
 }
