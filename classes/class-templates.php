@@ -4,8 +4,10 @@ namespace lsx_starter_plugin\classes;
 /**
  * Registers our Block Templates
  * 
- * @link http://url.com
+ * @link https://github.com/lightspeedwp/lsx-starter-plugin/blob/master/classes/class-templates.php
+ * @version 1.0.0
  */
+
 class Templates {
 
 	/**
