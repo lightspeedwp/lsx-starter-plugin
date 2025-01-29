@@ -17,33 +17,34 @@ class Setup {
 	protected static $instance = null;
 
 	/**
-	 * @var object \lsx_health_plan\classes\Post_Type();
-	 */
-	public $post_types;
-
-	/**
 	 * Contructor
 	 */
 	public function __construct() {
-		require_once( LSX_STARTER_PLUGIN_PATH . 'classes/class-post-type.php' );
-		$this->post_types = Post_Type::get_instance();
+		add_action( 'init', [ $this, 'load_plugin_textdomain' ] );
+
+		// Enqueue the assets.
+		add_action( 'admin_enqueue_scripts', [ $this, 'admin_assets' ] );
 	}
 
 	/**
-	 * Return an instance of this class.
-	 *
-	 * @since 1.0.0
-	 *
-	 * @return    object \lsx_starter_plugin\classes\Setup()    A single instance of this class.
+	 * Adds text domain.
 	 */
-	public static function get_instance() {
+	function load_plugin_textdomain() {
+		load_plugin_textdomain( 'lsx-starter-plugin', false, basename( LSX_STARTER_PLUGIN_PATH ) . '/languages' );
+	}
 
-		// If the single instance hasn't been set, set it now.
-		if ( null == self::$instance ) {
-			self::$instance = new self;
-		}
+	/**
+	 * Various assest we want loaded for admin pages.
+	 *
+	 * @return void
+	 */
+	public function admin_assets() {
+		// wp_enqueue_media();
+		wp_enqueue_script( 'media-upload' );
+		wp_enqueue_script( 'thickbox' );
+		wp_enqueue_style( 'thickbox' );
 
-		return self::$instance;
-
+		wp_enqueue_script( 'lsx-starter-plugin-admin', LSX_STARTER_PLUGIN_URL . 'assets/js/lsx-starter-plugin-admin.min.js', array( 'jquery' ), LSX_STARTER_PLUGIN_VER, true );
+		wp_enqueue_style( 'lsx-starter-plugin-admin', LSX_STARTER_PLUGIN_URL . 'assets/css/lsx-starter-plugin-admin.css', array(), LSX_STARTER_PLUGIN_VER );
 	}
 }
