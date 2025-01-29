@@ -28,6 +28,12 @@ class Core {
 	public $admin;
 
 	/**
+	 * Holds the template redirect functions
+	 * @var object \lsx_starter_plugin\classes\Templates();
+	 */
+	public $templates;
+
+	/**
 	 * Contructor
 	 */
 	public function __construct() {
@@ -57,6 +63,10 @@ class Core {
 		// Load plugin settings related functionality.
 		require_once LSX_STARTER_PLUGIN_PATH . 'classes/class-setup.php';
 		$this->setup = new Setup();
+
+		// Load plugin settings related functionality.
+		require_once LSX_STARTER_PLUGIN_PATH . 'classes/class-templates.php';
+		$this->templates = new Templates( LSX_STARTER_PLUGIN_PATH );
 
 		// Load plugin admin related functionality.
 		/*require_once LSX_STARTER_PLUGIN_PATH . 'classes/class-admin.php';

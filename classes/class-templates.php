@@ -18,13 +18,21 @@ class Templates {
 	public $templates = [];
 
 	/**
+	 * The path to the 
+	 *
+	 * @var string
+	 */
+	public $path = '';
+
+	/**
 	 * Initialize the plugin by setting localization, filters, and administration functions.
 	 *
 	 * @since 1.0.0
 	 *
 	 * @access private
 	 */
-	public function __construct() {
+	public function __construct( $path ) {
+		$this->path = $path;
 		add_action( 'init', [ $this, 'register_post_type_templates' ] );
 	}
 
@@ -75,7 +83,7 @@ class Templates {
 	 */
 	protected function get_template_content( $template ) {
 		ob_start();
-		include LSX_TO_PATH . "/templates/{$template}";
+		include LSX_STARTER_PLUGIN_PATH . "/templates/{$template}";
 		return ob_get_clean();
 	}
 }
