@@ -31,7 +31,7 @@ class Core {
 	 * Contructor
 	 */
 	public function __construct() {
-		$this->load_vendor();
+		add_action( 'init', [ $this, 'load_vendor' ], 9 );
 		$this->load_classes();
 	}
 
@@ -68,7 +68,8 @@ class Core {
 	 *
 	 * @return void
 	 */
-	private function load_vendor() {
+	public function load_vendor() {
+		global $CONTENT_MODEL_JSON_PATH;
 		require_once LSX_STARTER_PLUGIN_PATH . 'vendors/create-content-model/create-content-model.php';
 	}
 }
