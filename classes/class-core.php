@@ -31,6 +31,7 @@ class Core {
 	 * Contructor
 	 */
 	public function __construct() {
+		$this->load_vendor();
 		$this->load_classes();
 	}
 
@@ -54,11 +55,20 @@ class Core {
 	 */
 	private function load_classes() {
 		// Load plugin settings related functionality.
-		require_once LSX_STARTER_PLUGIN_PATH . '/classes/class-setup.php';
+		require_once LSX_STARTER_PLUGIN_PATH . 'classes/class-setup.php';
 		$this->setup = new Setup();
 
 		// Load plugin admin related functionality.
 		/*require_once LSX_STARTER_PLUGIN_PATH . 'classes/class-admin.php';
 		$this->admin = new Admin();*/
+	}
+
+	/**
+	 * Load the vendors
+	 *
+	 * @return void
+	 */
+	private function load_vendor() {
+		require_once LSX_STARTER_PLUGIN_PATH . 'vendors/create-content-model/create-content-model.php';
 	}
 }

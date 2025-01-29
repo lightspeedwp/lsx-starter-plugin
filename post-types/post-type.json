@@ -1,0 +1,43 @@
+{
+	"type": "postType",
+	"postType": "post_type",
+	"slug": "post-type",
+	"label": "Post Type",
+	"pluralLabel": "Post Type",
+	"icon": "admin-multisite",
+	"hasArchive": "post-types",
+	"hierarchical": false,
+	"showInRest": true,
+	"menuPosition": 20,
+	"template": [],
+	"fields": [
+		{
+			"slug": "text_field",
+			"type": "string",
+			"label": "Text Field",
+			"description": "",
+			"visible": true
+		},
+        {
+            "slug": "select_field",
+            "type": "multiselect",
+            "label": "Multiselect",
+            "description": "",
+			"visible": true,
+			"options": [ 
+				{
+					"label": "One",
+					"value": "one"
+				},
+				{
+					"label": "Two",
+					"value": "two"
+				},
+				{
+					"label": "Three",
+					"value": "three"
+				}
+			]
+        }	
+	]
+}

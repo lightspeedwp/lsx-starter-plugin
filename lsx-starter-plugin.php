@@ -20,6 +20,7 @@ define( 'LSX_STARTER_PLUGIN_PATH', plugin_dir_path( __FILE__ ) );
 define( 'LSX_STARTER_PLUGIN_CORE', __FILE__ );
 define( 'LSX_STARTER_PLUGIN_URL', plugin_dir_url( __FILE__ ) );
 define( 'LSX_STARTER_PLUGIN_VER', '1.1.0' );
+define( 'CONTENT_MODEL_JSON_PATH', LSX_STARTER_PLUGIN_PATH );
 
 /* ======================= Below is the Plugin Class init ========================= */
 
