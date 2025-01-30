@@ -8,7 +8,7 @@ if ( defined( 'CONTENT_MODEL_PLUGIN_FILE' ) ) {
 define( 'CONTENT_MODEL_PLUGIN_FILE', __FILE__ );
 define( 'CONTENT_MODEL_PLUGIN_PATH', plugin_dir_path( __FILE__ ) );
 define( 'CONTENT_MODEL_PLUGIN_URL', plugin_dir_url( __FILE__ ) );
-define( 'CONTENT_MODEL_PLUGIN_VER', '1.0.1' );
+define( 'CONTENT_MODEL_PLUGIN_VER', '1.0.0' );
 
 if ( ! function_exists( 'content_model_require_if_exists' ) ) {
 	/**
