@@ -32,8 +32,10 @@ class Core {
 	 * Contructor
 	 */
 	public function __construct() {
+		// Make sure our vendors load first.
 		add_action( 'init', [ $this, 'load_vendor' ], 9 );
 		$this->load_classes();
+		$this->load_includes();
 	}
 
 	/**
@@ -73,6 +75,18 @@ class Core {
 			if ( 'templates' === $filename ) {
 				$this->classes['templates']->set_path( LSX_STARTER_PLUGIN_PATH );
 			}
+		}
+	}
+
+	/**
+	 * Load our include files.
+	 *
+	 * @return void
+	 */
+	public function load_includes() {
+		$directory = LSX_STARTER_PLUGIN_PATH . 'includes/';
+		foreach ( glob( $directory . '*.php') as $file ) {
+			require_once $file;
 		}
 	}
 
