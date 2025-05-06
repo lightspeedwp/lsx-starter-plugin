@@ -1,4 +1,9 @@
 <?php
+/**
+ * Loads the create-content-model vendor.
+ * @category post-type-support
+ */
+
 declare( strict_types = 1 );
 
 if ( defined( 'CONTENT_MODEL_PLUGIN_FILE' ) ) {

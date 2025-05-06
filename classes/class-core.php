@@ -96,6 +96,10 @@ class Core {
 	 * @return void
 	 */
 	public function load_vendor() {
+		/**
+		 * Include the create-content-model vendor.
+		 * @category post-type-support
+		 */
 		require_once LSX_STARTER_PLUGIN_PATH . 'vendors/create-content-model/create-content-model.php';
 	}
 }

@@ -24,3 +24,14 @@ Do a case sensitive find and replace for the following text in all files, includ
 Replace the following in all filenames, including hidden files.
 - lsx-starter-plugin -> your-plugin
 ```
+
+Combine the following prompts to remove the post type support.
+```
+Please delete the following files and folders.
+/vendor/create-content-modal
+/post-types/
+/templates/archive-post-type.php
+/templates/single-post-type.php
+
+Remove any code with the Docblock @category "post-type-support".
+```
