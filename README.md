@@ -32,6 +32,7 @@ Please delete the following files and folders.
 /post-types/
 /templates/archive-post-type.php
 /templates/single-post-type.php
+/classes/class-templates.php
 
 Remove any code with the Docblock @category "post-type-support".
 ```
