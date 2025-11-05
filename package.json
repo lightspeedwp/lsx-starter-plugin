@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "LSX Starter Plugin to kick start your WordPress Development",
   "scripts": {
-	"build-pot": "wp i18n make-pot . languages/lsx-starter-plugin.pot",
+    "build-pot": "wp i18n make-pot . languages/lsx-starter-plugin.pot",
     "build-mopo": "rm -R languages/lsx-starter-plugin-en_EN.mo && cp languages/lsx-starter-plugin.pot languages/lsx-starter-plugin-en_EN.po && wp i18n make-mo languages",
     "translate-US": "cp languages/lsx-starter-plugin-en_EN.po languages/lsx-starter-plugin-en_US.po && cp languages/lsx-starter-plugin-en_EN.mo languages/lsx-starter-plugin-en_US.mo"
   },
@@ -20,6 +20,8 @@
     "url": "https://github.com/lightspeeddevelopment/lsx-starter-plugin/issues"
   },
   "homepage": "https://github.com/lightspeeddevelopment/lsx-starter-plugin#readme",
-  "devDependencies": {},
-  "dependencies": {}
+  "devDependencies": {
+    "@playwright/test": "^1.56.1",
+    "playwright": "^1.56.1"
+  }
 }
